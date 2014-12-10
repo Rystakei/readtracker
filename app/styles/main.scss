@@ -28,11 +28,32 @@ body{
   font-size: 20px;
 }
 
+.container{
+  background: lighten($bodyBgColor, 5%);
+}
+
 h1{
   font-family: $headerFontFace, 'Arial';
   font-size: 24px;
 }
 
+.heading h1{
+  text-align: center;
+  font-size: 90px;
+}
+
+img{
+  text-align: center;
+  margin: 0 auto;
+}
+.info{
+  background-color: $turquoise;
+  color: $blue;
+  height: 290px;
+}
+.info h1,h2{
+  color: white;
+}
 .sidebar-nav > .sidebar-brand a{
   color: $turquoise;
   font-size: 30px;
@@ -55,10 +76,11 @@ h1{
 
 .header h1{
   font-size: 90px;
+  padding: -10px;
 }
 
 ul{
-  padding: 20px;
+  // padding: 20px;
 }
 
 #sidebar-wrapper{
