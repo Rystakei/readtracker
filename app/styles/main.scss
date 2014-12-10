@@ -1,8 +1,10 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/variables";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "simple-sidebar.scss.css";
 // endbower
+@import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui";
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
