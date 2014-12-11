@@ -26,3 +26,27 @@ body{
   background-color: $bodyBgColor; 
   font-family: $bodyFont; 
 }
+
+nav.navbar.navbar-default{
+  background-color: #96281B;
+  a{
+  color: white;
+  }
+}
+.panel > .panel-heading{
+  background-color: #96281B;
+  color: white;
+}
+
+.btn.btn-primary{
+  background-color: #1485CC;
+  border-color: #1485CC;
+}
+
+a{
+  color: #1485CC;
+}
+a:hover{
+  color: #96281B;
+}
+
