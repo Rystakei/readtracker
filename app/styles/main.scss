@@ -1,133 +1,28 @@
 // $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 $icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/";
 
-@import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/variables";
+// @import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/variables";
 
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-@import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui";
+// @import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui";
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
-@import url(http://fonts.googleapis.com/css?family=Lobster:400,700);
+
+// Colors and Fonts
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+ $bodyFont: 'Ubuntu';
+ $headerFontFace: 'Ubuntu';
+ $blue: #2C3E50; 
+ $turquoise: #1DD2AF;
+ $galleryGray: #EEEEEE;
+ $containerBgColor: #EAEDF2;
+ $bodyBgColor: $galleryGray; 
 
-$bodyFont: 'Ubuntu';
-$headerFontFace: 'Ubuntu';
-$blue: #2C3E50; 
-$turquoise: #1DD2AF;
-$containerBgColor: #EAEDF2;
-$bodyBgColor: $turquoise;
+
 body{
-  font-family: $bodyFont, 'Arial';
-  background-color: $bodyBgColor;
-  color: #2C3E50;
-  font-size: 12px;
+  background-color: $bodyBgColor; 
+  font-family: $bodyFont; 
 }
-
-p{
-  font-size: 16px;
-}
-
-.container{
-  background: lighten($containerBgColor, 5%);
-}
-
-h1{
-  font-family: $headerFontFace, 'Arial';
-  font-size: 20px;
-}
-
-.heading h1{
-  text-align: center;
-  font-size: 40px;
-}
-
-img{
-  text-align: center;
-  margin: 0 auto;
-}
-.info{
-  background-color: white;
-  color: $blue;
-  height: 290px;
-}
-.info h1,h2{
-  color: $blue;
-}
-.sidebar-nav > .sidebar-brand a{
-  color: $turquoise;
-  font-size: 30px;
-}
-
-.wrapper{
-  height: 100%;
-}
-.panel.panel-default{
-  background-color: #FFFFFF;
-}
-.panel.panel-default h1, .header h1{
-  text-align: center;
-}
-
-.panel-default > .panel-heading{
-  background-color: $blue;
-  color: white;
-}
-
-.panel.panel-default.colorized{
-  .panel-heading{
-    border: solid 5px $turquoise;
-    background-color: lighten($turquoise, 5%);
-  }
-  h1{
-    color: white;
-  }
-}
-
-
-.res-attr{
-  font-weight: bold;
-  color: $blue;
-}
-span.accent{
-  color: $turquoise;
-}
-.header h1{
-  font-size: 90px;
-  padding: -10px;
-}
-
-ul{
-  // padding: 20px;
-}
-
-#sidebar-wrapper{
-  background: #2C3E50;
-}
-
-.topics li:hover{
-  font-size: 22px;
-  color: turquoise;
-}
-
-.badge.urgent{
-  background-color: red;
-}
-
-.badge.on-track{
-  background-color: #1DD2AF;
-}
-
-.badge.soon{
-  background-color: yellow;
-}
-
-td:first-child{
-  font-weight: bold;
-}
-
-
