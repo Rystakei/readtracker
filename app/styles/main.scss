@@ -1,4 +1,4 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 $icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/";
 
 @import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/variables";
@@ -19,27 +19,31 @@ $bodyFont: 'Ubuntu';
 $headerFontFace: 'Ubuntu';
 $blue: #2C3E50; 
 $turquoise: #1DD2AF;
-$bodyBgColor: #EAEDF2;
-
+$containerBgColor: #EAEDF2;
+$bodyBgColor: $turquoise;
 body{
   font-family: $bodyFont, 'Arial';
-  background-color: #EAEDF2;
+  background-color: $bodyBgColor;
   color: #2C3E50;
-  font-size: 20px;
+  font-size: 12px;
+}
+
+p{
+  font-size: 16px;
 }
 
 .container{
-  background: lighten($bodyBgColor, 5%);
+  background: lighten($containerBgColor, 5%);
 }
 
 h1{
   font-family: $headerFontFace, 'Arial';
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .heading h1{
   text-align: center;
-  font-size: 90px;
+  font-size: 40px;
 }
 
 img{
@@ -47,12 +51,12 @@ img{
   margin: 0 auto;
 }
 .info{
-  background-color: $turquoise;
+  background-color: white;
   color: $blue;
   height: 290px;
 }
 .info h1,h2{
-  color: white;
+  color: $blue;
 }
 .sidebar-nav > .sidebar-brand a{
   color: $turquoise;
@@ -74,6 +78,24 @@ img{
   color: white;
 }
 
+.panel.panel-default.colorized{
+  .panel-heading{
+    border: solid 5px $turquoise;
+    background-color: lighten($turquoise, 5%);
+  }
+  h1{
+    color: white;
+  }
+}
+
+
+.res-attr{
+  font-weight: bold;
+  color: $blue;
+}
+span.accent{
+  color: $turquoise;
+}
 .header h1{
   font-size: 90px;
   padding: -10px;
@@ -102,6 +124,10 @@ ul{
 
 .badge.soon{
   background-color: yellow;
+}
+
+td:first-child{
+  font-weight: bold;
 }
 
 

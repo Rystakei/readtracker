@@ -34,141 +34,105 @@
         <div id="page-content-wrapper">
             <div class="container">
               <div class="heading">
-                <h1>ReadList</h1>
+                <h1><span class="accent">Read</span>List</h1>
               </div>
               <div class="row">
                 <div class="header">
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-8 info">
-                  <h2>Sort Your Reading Collection</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, dignissimos. Impedit velit facilis doloribus, soluta a porro et facere sunt quae eligendi illum consequatur! Laborum, animi, nesciunt. Tempora, nulla, quisquam.</p>
-                </div>
-                <div class="col-md-4">
+
+                <div class="col-md-9">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <img src="https://cdn2.iconfinder.com/data/icons/flat-seo-web-ikooni/128/flat_seo2-04-512.png" width="100px" height="100px" text-align="center" class="center-block">
-                      <h1>Currently Reading</h1>
+                      <h1>Reading Queue</h1>
                     </div>
-                    <ul class="list-group">
-                      <li class="list-group-item">20 Best Web Fonts from Google Web Fonts... <span class="badge urgent">10/1/15</span></li>
-                      <li class="list-group-item">Article Name <span class="badge soon">11/1/15</span>
-                      </li>
-                      <li class="list-group-item">Article Name <span class="badge on-track">12/1/15</span>
-                      </li>
-                    </ul>
+                      <div class="panel-body">
+                       <form class="form-inline float-right">
+                            <div class="form-group has-feedback">
+                             <div class="input-group">
+                                <input type="text" value="" placeholder="With icon" class="form-control" />
+                               <span class="form-control-feedback fui-search"></span>
+                             </div>
+                            </div>
+                            <!--/.form-group--> 
+
+                            <a class="btn btn-primary" href="#">Add Item</a>
+                          </form> 
+                    <br>
+                    <!-- table -->
+                    <table class="table table-striped">
+                      <tr>
+                        <th>Title</th>
+                        <th>Tags</th>
+                        <th>Progress</th>
+                      </tr>
+                      <tr>
+                        <td>Html5 in Action</td>
+                        <td>html5, apis</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Learning D3</td>
+                        <td>d3, dataviz, javascript</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Introducing Elixir</td>
+                        <td>elixir, functional_programming</td>
+                        <td></td>
+                      </tr>
+                    </table>
+                      
+                    </div>
                   </div>
                 </div>
-               <!--  <div class="col-md-1">
-                  <div class="panel panel-default">
+   
+                <div class="col-md-3">
+                  <div class="panel panel-default colorized">
                     <div class="panel-heading">
-                      <h1>Topic Priorities</h1>
+                      <h1>Resource Info</h1>
                     </div>
-                    <ul class="list-group topics">
-                      <li class="list-group-item">Ruby</li>
-                      <li class="list-group-item">JavaScript</li>
-                      <li class="list-group-item">Interaction Design</li>
-                      <li class="list-group-item">Hadoop</li>
-                      <li class="list-group-item">Natural Language Processing</li>
-                    </ul>
+                    <div class="panel-body">
+                      <table class="table table-striped">
+                        <tr>
+                          <td>Title:</td>
+                          <td>HTML5 in Action</td>
+                        </tr>
+                        <tr>
+                          <td>URL:</td>
+                          <td>http://amazon.com</td>
+                        </tr>
+                        <tr>
+                          <td>Tags: </td>
+                          <td>html5, apis</td>
+                        </tr>
+                        <tr>
+                          <td> Progress: </td>
+                          <td>100/200p <i> 50%</i></td>
+                        </tr>
+                        <tr>
+                          <td>Due Date:</td>
+                          <td>10/1/15</td>
+                        </tr>
+                      </table>
+<!--                     <p><span class="res-attr"><b>Title:</b></span> HTML5 in Action</p>
+                    <p><span class="res-attr">URL:</span> <a>http://www.amazon.com/html</a>
+                    <p> <span class="res-attr">Tags</span>: html5, apis </p>
+                    <p> <span class="res-attr">Due Date:</span> 1/15/2015</p>
+                    <p> <span class="res-attr">Progress:</span> 100/200p <i>(50%)</i> </p> -->
+                    </div>
                   </div>
- -->                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h1> Reading Queue </h1>
                 </div>
-                <div class="col-md-4">
-                  <form class="form-inline float-right">
-                    <div class="form-group has-feedback">
 
-                     <!-- <input type="search" class="form-control" placeholder="Search + Enter" />-->
 
-                     <div class="input-group">
-                        <input type="text" value="" placeholder="With icon" class="form-control" />
-                       <span class="form-control-feedback fui-search"></span>
-                     </div>
-                    </div>
-                    <!--/.form-group--> 
+               </div>
 
-                    <a class="btn btn-primary" href="#">Add Thing</a>
-                  </form>               
-                </div>
+              
+            <!-- container -->
               </div>
               
-              <div class="row">
-                <div class="col-md-12">
-                  <table class="table table-striped">
-                    <tr>
-                      <th>Title</th>
-                      <th>Tags</th>
-                      <th>Due Date</th>
-                      <th>Progress</th>
-                      <th>Notes</th>
-                    </tr>
-                    <tr>
-                      <td>Html5 in Action</td>
-                      <td>html5, apis</td>
-                      <td>10/1/15</td>
-                      <td>10/100</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Introducing Elixir</td>
-                      <td>elixir, functional_programming</td>
-                      <td>10/1/15</td>
-                      <td>10/200</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Learning D3</td>
-                      <td>d3, dataviz, javascript</td>
-                      <td>10/1/15</td>
-                      <td>10/300</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
     <!-- /#page-content-wrapper -->
 
     </div>
