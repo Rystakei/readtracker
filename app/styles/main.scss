@@ -25,6 +25,7 @@ $icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/"
 body{
   background-color: $bodyBgColor; 
   font-family: $bodyFont; 
+  color: #333333; 
 }
 
 nav.navbar.navbar-default{
@@ -34,19 +35,28 @@ nav.navbar.navbar-default{
   }
 }
 .panel > .panel-heading{
-  background-color: #96281B;
+  background-color: #333;
   color: white;
 }
 
 .btn.btn-primary{
-  background-color: #1485CC;
-  border-color: #1485CC;
+  background-color: lighten(#96281B, 10%);
+  border-color: lighten(#96281B, 10%);
 }
 
 a{
-  color: #1485CC;
+  color: gray;
 }
 a:hover{
   color: #96281B;
+  text-decoration: none;
 }
 
+.table-striped > tbody > tr:nth-child(odd).table-headers{
+  // background-color: gray;
+  // color: white;
+}
+
+.info td:first-child{
+  font-weight: bold; 
+}
