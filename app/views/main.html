@@ -1,146 +1,170 @@
 
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">
+            <span class="glyphicon glyphicon-book"></span>
+            ReadList
+          </a>
+        </div>
+      </div>
+    </nav>
+      <div class="container">
+        <div class="heading">
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-heading">Currently Reading</div>
+              <div class="panel-body">
 
-        <!-- Sidebar -->
-<!--         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        readmeplease
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Ruby</a>
-                </li>
-                <li>
-                    <a href="#">JavaScript</a>
-                </li>
-                <li>
-                    <a href="#">Animation</a>
-                </li>
-                <li>
-                    <a href="#">Interaction Design</a>
-                </li>
-                <li>
-                    <a href="#">Elixir</a>
-                </li>
-                <li>
-                    <a href="#">Concurrency</a>
-                </li>
-            </ul>
-        </div> -->
-        <!-- /#sidebar-wrapper -->
+                <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="book in currentlyReading">
+                    <span class="title"> {{ book.title }} </span>
+                    <span class="glyphicon glyphicon-arrow-down" ng-click=""></span>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-          <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header"><a class="navbar-brand">ReadList</a></div>
-            </div>
-          </nav>
-            <div class="container">
-              <div class="heading">
-                <!-- <h1><span class="accent">Read</span>List</h1> -->
-              </div>
-              <div class="row">
-              </div>
-              <div class="row">
+                     <div class="progress">
+                         <div class="progress-bar" role="progressbar" aria-valuenow="{{progressRate(book.readPages, book.totalPages)}}" aria-valuemax="100" style="width: {{progressRate(book.readPages, book.totalPages)}}%">
+                           {{book.readPages}} / {{book.totalPages}} pages <span class="highlight-rate">({{ progressRate(book.readPages, book.totalPages)}}%)</span>
+                       </div>
+                     </div>
+                    <div class="startDate"><span class="title">Started:</span> {{startDate}}</div>
+                    Read <span class="highlight-rate">{{dailyRate }} pages</span> 
+                    per day to finish by <span class="highlight-date">Tomorrow</span>
 
-                <div class="col-md-9">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                    Reading Queue
+                  </li>
+                </ul>
+<!--                 <ul class="list-group">
+                  <li class="list-group-item"><span class="title">Using React </span>| http://www.reactjs.com 
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemax="100" style="width: 20%">
+                          0 / 1 pages <span class="highlight-rate">(0%)</span>
+                      </div>
                     </div>
-                      <div class="panel-body">
-                       <form class="form-inline float-right">
-                            <div class="form-group has-feedback">
-                             <div class="input-group">
-                                <input type="text" value="" placeholder="Search Items" class="form-control" />
-                               <span class="form-control-feedback fui-search"></span>
-                             </div>
-                            </div>
-                            <!--/.form-group--> 
+                   Read <span class="highlight-rate">1 page</span> 
+                   per day to finish by <span class="highlight-date">Today</span>
+                 </li>
+                  <li class="list-group-item"> <span class="title">JavaScript Ninja </span>
+                    <div class="progress">
 
-                            <a class="btn btn-primary" href="#">Add Item</a>
-                          </form> 
-                    <br>
-                    <!-- table -->
-                    <table class="table table-striped">
-                      <tr class="table-headers">
-                        <th>Title</th>
-                        <th>Tags</th>
-                        <th>Progress</th>
-                      </tr>
-                      <tr>
-                        <td>Html5 in Action</td>
-                        <td><a>html5</a>, <a>apis</a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>Learning D3</td>
-                        <td><a>d3</a>, <a>dataviz</a>, <a>javascript</a></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>Introducing Elixir</td>
-                        <td><a>elixir</a>, <a>functional_programming</a></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                      
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemax="100" style="width: 60%">200 / 300 pages <span class="highlight-rate">(66.6%)</span>
+                      </div>
                     </div>
-                  </div>
-                </div>
-   
-                <div class="col-md-3">
-                  <div class="panel panel-default info">
-                    <div class="panel-heading">
-                      Resource Info
-                    </div>
-                    <div class="panel-body">
-                      <table class="table table-striped">
-                        <tr>
-                          <td>Title:</td>
-                          <td>HTML5 in Action</td>
-                        </tr>
-                        <tr>
-                          <td>URL:</td>
-                          <td><a>http://amazon.com</a></td>
-                        </tr>
-                        <tr>
-                          <td>Tags: </td>
-                          <td><a>html5</a>, <a>apis</a></td>
-                        </tr>
-                        <tr>
-                          <td> Progress: </td>
-                          <td>100/200p <i> 50%</i></td>
-                        </tr>
-                        <tr>
-                          <td>Due Date:</td>
-                          <td>10/1/15</td>
-                        </tr>
-                        <tr>
-                          <td rowspan="2">Notes:</td>
-                          </tr>
-                          <tr>
-                            <td rowspan="2">
-                              <textarea class="form-control" rows="3" placeholder="Enter notes here."></textarea>
-                            </td>
-                        </tr>
-                      </table>
-<!--                     <p><span class="res-attr"><b>Title:</b></span> HTML5 in Action</p>
-                    <p><span class="res-attr">URL:</span> <a>http://www.amazon.com/html</a>
-                    <p> <span class="res-attr">Tags</span>: html5, apis </p>
-                    <p> <span class="res-attr">Due Date:</span> 1/15/2015</p>
-                    <p> <span class="res-attr">Progress:</span> 100/200p <i>(50%)</i> </p> -->
-                    </div>
-                  </div>
-                </div>
-
-
+                    Read <span class="highlight-rate">30 pages</span> 
+                    per day to finish by <span class="highlight-date">12/30/2014</span>
+                    </li>
+                </ul> -->
                </div>
-
-              
-            <!-- container -->
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" >
+                Reading Queue 
+                <a class="btn btn-primary add-me" ng-click="addToQueue()">
+                  <span class="glyphicon glyphicon-plus"></span>
+                  Add Item
+                </a>
               </div>
-              
-    <!-- /#page-content-wrapper -->
+              <div class="panel-body">
+               <form class="form-inline float-right">
+                  <div class="form-group has-feedback">
+                   <div class="input-group">
+                      <input type="text" placeholder="Search Items" class="form-control" />
+                     <span class="form-control-feedback fui-search"></span>
+                   </div>
+                  </div>
+                  <!--/.form-group--> 
+<!--                   <a class="btn btn-primary" href="#">Add Item</a>
+ -->                
+                </form> 
+            <br>
+              <!-- table -->
+                <table class="table table-striped queue-table">
+                  
+                  <tr class="table-headers">
+                    <th>Title</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                  </tr>
+                  <tbody class="queue-body">
+                  <tr ng-repeat="item in items">
+                    <td>{{item.title}} 
+
+                    </td>
+                    <td>
+                      <a>{{item.tags.join(",")}}</a>
+                    </td>
+                    <td>
+                      <span class="glyphicon glyphicon-arrow-up">
+                      </span>
+                      <span class="glyphicon glyphicon-info-sign">
+                        
+                      </span>
+                      <span class="glyphicon glyphicon-remove-circle">
+                      </span>
+                    </td>
+
+                  </tr>
+                  </tbody>
+                  <!-- <tr>
+                    <td>Learning D3</td>
+                    <td><a>d3</a>, <a>dataviz</a>, <a>javascript</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Introducing Elixir</td>
+                    <td><a>elixir</a>, <a>functional_programming</a></td>
+                    <td></td> -->
+                  </tr>
+                </table>                
+              <!-- end panel body -->
+              </div>
+              <!-- end panel -->
+            </div>
+            <!-- end col md 9 -->
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-default info">
+              <div class="panel-heading">
+                Resource Info
+              </div>
+              <div class="panel-body">
+                <table class="table table-striped">
+                  <tr>
+                    <td>Title:</td>
+                    <td>HTML5 in Action</td>
+                  </tr>
+                  <tr>
+                    <td>URL:</td>
+                    <td><a>http://amazon.com</a></td>
+                  </tr>
+                  <tr>
+                    <td>Tags: </td>
+                    <td><a>html5</a>, <a>apis</a></td>
+                  </tr>
+                  <tr>
+                    <td> Progress: </td>
+                    <td>100/200p <i> 50%</i></td>
+                  </tr>
+                  <tr>
+                    <td>Due Date:</td>
+                    <td>10/1/15</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">Notes:</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">
+                        <textarea class="form-control" rows="3" placeholder="Enter notes here."></textarea>
+                      </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+         </div>        
+      <!-- container -->
+        </div>        
+<!-- /#page-content-wrapper -->

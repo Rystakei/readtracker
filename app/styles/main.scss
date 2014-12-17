@@ -1,5 +1,5 @@
-// $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-$icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/";
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// $icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/";
 
 // @import "../bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/variables";
 
@@ -21,37 +21,54 @@ $icon-font-path: "../bower_components/flat-ui-sass/vendor/assets/fonts/flat-ui/"
  $containerBgColor: #EAEDF2;
  $bodyBgColor: $galleryGray; 
 
+ $baseColor: #CF000F; 
 
+
+.add-me{
+  margin-left: 12px;
+}
 body{
   background-color: $bodyBgColor; 
-  font-family: $bodyFont; 
+  font-family: $bodyFont, Arial; 
   color: #333333; 
 }
 
 nav.navbar.navbar-default{
-  background-color: #96281B;
+  background-color: $baseColor;
   a{
   color: white;
   }
 }
 .panel > .panel-heading{
-  background-color: #333;
-  color: white;
+  background-color: darken($bodyBgColor, 5%); 
+  font-weight: bold; 
+  font-size: 16px;
 }
 
 .btn.btn-primary{
-  background-color: lighten(#96281B, 10%);
-  border-color: lighten(#96281B, 10%);
+  background-color: $baseColor;
+  border-color: $baseColor;
+}
+
+.highlight-date{
+  font-weight: italic;
+}
+
+.highlight-rate{
+  font-style: italic; 
 }
 
 a{
   color: gray;
 }
 a:hover{
-  color: #96281B;
+  color: $baseColor;
   text-decoration: none;
 }
 
+.title{
+  font-weight: bold;
+}
 .table-striped > tbody > tr:nth-child(odd).table-headers{
   // background-color: gray;
   // color: white;
@@ -59,4 +76,25 @@ a:hover{
 
 .info td:first-child{
   font-weight: bold; 
+}
+
+.progress{
+  width:50%;
+  margin-top: 20px;
+  // display: inline;
+}
+
+.progress-bar{
+  background-color: lighten(#96281B, 30%);
+}
+
+.add{
+  color: $baseColor;
+}
+
+.glyphicon{
+  margin: 0px 5px; 
+}
+.glyphicon.glyphicon-remove-circle{
+  color: $baseColor;
 }
