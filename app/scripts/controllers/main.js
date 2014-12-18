@@ -20,26 +20,31 @@ angular.module('readtrackerApp')
       title: "HTML5 in Action", 
       tags: ["html5", "apis"], 
       readPages: 100, 
-      totalPages: 400
+      totalPages: 400,
+      inProgress: true,
+      itemId: 0
     };
 
     $scope.b2 = {
       title: "D3.js in Action", 
       tags: ["dataviz", "javascript"],
       readPages: 300, 
-      totalPages: 400
+      totalPages: 400,
+      inProgress: true,
+      itemId: 1
     };
 
     $scope.b3 = {
       title: "Introducing Elixir",
       tags: ["elixir", "functional"],
       readPages: 100, 
-      totalPages: 250
+      totalPages: 250,
+      inProgress: false,
+      itemId: 2
     };
 
-    $scope.currentlyReading = [$scope.b1, $scope.b2, $scope.b3]; 
+    $scope.items = [$scope.b1, $scope.b2, $scope.b3]; 
 
-    $scope.items = $scope.currentlyReading; 
 
     $scope.progressRate = function(readPages, totalPages) {
       return (readPages / totalPages) * 100; 
@@ -58,6 +63,13 @@ angular.module('readtrackerApp')
 
     $scope.addToQueue = function() {
       $('.queue-body').append($("<tr><td>Title Here</td><td>Random, Tags</td></tr>"));
+    }
+
+    $scope.changeStatus = function(index, readingStatus) {
+      console.log("selectedItem", $scope.items[index]);
+      $scope.items[index].inProgress = readingStatus;
+      // $scope.getCurrentStatus();
+      console.log($scope.items);
     }
 
   });

@@ -21,9 +21,9 @@
               <div class="panel-body">
 
                 <ul class="list-group">
-                  <li class="list-group-item" ng-repeat="book in currentlyReading">
+                  <li class="list-group-item" ng-repeat="book in items | filter: { inProgress: true }">
                     <span class="title"> {{ book.title }} </span>
-                    <span class="glyphicon glyphicon-arrow-down" ng-click=""></span>
+                    <span class="glyphicon glyphicon-arrow-down" ng-click="changeStatus({{book.itemId}}, false)"></span>
 
                      <div class="progress">
                          <div class="progress-bar" role="progressbar" aria-valuenow="{{progressRate(book.readPages, book.totalPages)}}" aria-valuemax="100" style="width: {{progressRate(book.readPages, book.totalPages)}}%">
@@ -70,7 +70,7 @@
                <form class="form-inline float-right">
                   <div class="form-group has-feedback">
                    <div class="input-group">
-                      <input type="text" placeholder="Search Items" class="form-control" />
+                      <input type="text" placeholder="Search Items" class="form-control" ng-model="search" />
                      <span class="form-control-feedback fui-search"></span>
                    </div>
                   </div>
@@ -87,8 +87,8 @@
                     <th>Tags</th>
                     <th>Actions</th>
                   </tr>
-                  <tbody class="queue-body">
-                  <tr ng-repeat="item in items">
+                  <tbody ui-sortable ng-model="fixme" class="queue-body">
+                  <tr ng-repeat="item in items | filter:search:strict|  filter: { inProgress: false }">
                     <td>{{item.title}} 
 
                     </td>
@@ -96,7 +96,7 @@
                       <a>{{item.tags.join(",")}}</a>
                     </td>
                     <td>
-                      <span class="glyphicon glyphicon-arrow-up">
+                      <span class="glyphicon glyphicon-arrow-up" ng-click="changeStatus({{item.itemId}}, true)">
                       </span>
                       <span class="glyphicon glyphicon-info-sign">
                         
