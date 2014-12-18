@@ -21,7 +21,7 @@ angular.module('readtrackerApp')
       tags: ["html5", "apis"], 
       readPages: 100, 
       totalPages: 400,
-      inProgress: false,
+      inProgress: true,
       itemId: 0
     };
 

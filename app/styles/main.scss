@@ -56,11 +56,15 @@ nav.navbar.navbar-default{
 
 
 .highlight-date{
-  font-weight: italic;
+  color: $tertiaryColor;
 }
 
 .highlight-rate{
-  font-style: italic; 
+  color: $tertiaryColor;
+}
+
+.rate-info{
+  padding-top: 15px;
 }
 
 a{
