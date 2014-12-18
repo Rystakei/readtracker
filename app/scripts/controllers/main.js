@@ -21,7 +21,7 @@ angular.module('readtrackerApp')
       tags: ["html5", "apis"], 
       readPages: 100, 
       totalPages: 400,
-      inProgress: true,
+      inProgress: false,
       itemId: 0
     };
 
@@ -30,7 +30,7 @@ angular.module('readtrackerApp')
       tags: ["dataviz", "javascript"],
       readPages: 300, 
       totalPages: 400,
-      inProgress: false,
+      inProgress: true,
       itemId: 1
     };
 
@@ -50,7 +50,7 @@ angular.module('readtrackerApp')
       return (readPages / totalPages) * 100; 
     }
 
-    $scope.dailyRate = 30; 
+    $scope.dailyRate = 100; 
     $scope.startDate = "12/1/2014";
 
     $scope.finishDate = function() {

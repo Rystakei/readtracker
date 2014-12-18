@@ -21,7 +21,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
  $containerBgColor: #EAEDF2;
  $bodyBgColor: $galleryGray; 
 
- $baseColor: #CF000F; 
+ $baseColor: #EF4836; 
  $accentColor: #F22613;
  $tertiaryColor: #3A539B;
 
@@ -107,8 +107,10 @@ a:hover{
 
 
 .btn.btn-danger{
-  background-color: lighten(#96281B, 15%);
-  border-color: lighten(#96281B, 15%);
+  // background-color: lighten(#96281B, 15%);
+  // border-color: lighten(#96281B, 15%);
+  background-color: #EF4836;
+  border-color: #EF4836;
   &:hover{
     background-color: $accentColor;
     border-color: $accentColor;
