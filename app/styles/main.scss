@@ -119,6 +119,9 @@ a:hover{
 
 .icon-group{
   visibility: hidden;
+  .glyphicon{
+    cursor: pointer;
+  }
 }
 
 .list-group-item:hover > .icon-group, tr:hover .icon-group{
