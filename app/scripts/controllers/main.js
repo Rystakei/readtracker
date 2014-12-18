@@ -21,7 +21,7 @@ angular.module('readtrackerApp')
       tags: ["html5", "apis"], 
       readPages: 100, 
       totalPages: 400,
-      inProgress: true,
+      inProgress: false,
       itemId: 0
     };
 
@@ -30,7 +30,7 @@ angular.module('readtrackerApp')
       tags: ["dataviz", "javascript"],
       readPages: 300, 
       totalPages: 400,
-      inProgress: true,
+      inProgress: false,
       itemId: 1
     };
 

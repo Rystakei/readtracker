@@ -17,13 +17,27 @@
         <div class="row">
           <div class="col-md-9">
             <div class="panel panel-default">
-              <div class="panel-heading">Currently Reading</div>
+              <div class="panel-heading">
+                Currently Reading
+                <a class="btn btn-danger add-me" ng-click="addToQueue()">
+                  <span class="glyphicon glyphicon-plus"></span>
+                  Add Item
+                </a>
+              </div>
               <div class="panel-body">
-
+              <div class="alert alert-danger" role="alert" ng-if="currentItems.length < 1">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+                </span>
+                You aren't currently reading anything! You should add something to the list.
+              </div>
                 <ul class="list-group">
-                  <li class="list-group-item" ng-repeat="book in items | filter: { inProgress: true }">
+                  <li class="list-group-item" ng-repeat="book in (currentItems = (items | filter: { inProgress: true }))">
                     <span class="title"> {{ book.title }} </span>
-                    <span class="glyphicon glyphicon-arrow-down" ng-click="changeStatus({{book.itemId}}, false)"></span>
+                    <span class="icon-group">
+                      <span class="glyphicon glyphicon-arrow-down" ng-click="changeStatus({{book.itemId}}, false)"></span>
+                      <span class="glyphicon glyphicon-info-sign"></span>
+                      <span class="glyphicon glyphicon-remove-circle"></span>
+                    </span>
 
                      <div class="progress">
                          <div class="progress-bar" role="progressbar" aria-valuenow="{{progressRate(book.readPages, book.totalPages)}}" aria-valuemax="100" style="width: {{progressRate(book.readPages, book.totalPages)}}%">
@@ -36,37 +50,23 @@
 
                   </li>
                 </ul>
-<!--                 <ul class="list-group">
-                  <li class="list-group-item"><span class="title">Using React </span>| http://www.reactjs.com 
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemax="100" style="width: 20%">
-                          0 / 1 pages <span class="highlight-rate">(0%)</span>
-                      </div>
-                    </div>
-                   Read <span class="highlight-rate">1 page</span> 
-                   per day to finish by <span class="highlight-date">Today</span>
-                 </li>
-                  <li class="list-group-item"> <span class="title">JavaScript Ninja </span>
-                    <div class="progress">
-
-                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemax="100" style="width: 60%">200 / 300 pages <span class="highlight-rate">(66.6%)</span>
-                      </div>
-                    </div>
-                    Read <span class="highlight-rate">30 pages</span> 
-                    per day to finish by <span class="highlight-date">12/30/2014</span>
-                    </li>
-                </ul> -->
                </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" >
-                Reading Queue 
-                <a class="btn btn-primary add-me" ng-click="addToQueue()">
+                To Read Later 
+                <a class="btn btn-danger add-me" ng-click="addToQueue()">
                   <span class="glyphicon glyphicon-plus"></span>
                   Add Item
                 </a>
               </div>
               <div class="panel-body">
+                <div class="alert alert-danger" ng-show="(items | filter:{ inProgress: false }).length==0">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+                  </span>
+                  There aren't any resources to read later. You should add some! 
+                </div>
+              <div class="read-later" ng-hide="(items | filter:{ inProgress: false }).length==0">
                <form class="form-inline float-right">
                   <div class="form-group has-feedback">
                    <div class="input-group">
@@ -75,49 +75,37 @@
                    </div>
                   </div>
                   <!--/.form-group--> 
-<!--                   <a class="btn btn-primary" href="#">Add Item</a>
- -->                
                 </form> 
             <br>
               <!-- table -->
-                <table class="table table-striped queue-table">
-                  
+                <table class="table table-striped queue-table">          
                   <tr class="table-headers">
                     <th>Title</th>
                     <th>Tags</th>
                     <th>Actions</th>
                   </tr>
-                  <tbody ui-sortable ng-model="fixme" class="queue-body">
+                  <tbody ui-sortable class="queue-body">
                   <tr ng-repeat="item in items | filter:search:strict|  filter: { inProgress: false }">
-                    <td>{{item.title}} 
-
+                    <td>
+                      {{item.title}} 
                     </td>
                     <td>
                       <a>{{item.tags.join(",")}}</a>
                     </td>
                     <td>
-                      <span class="glyphicon glyphicon-arrow-up" ng-click="changeStatus({{item.itemId}}, true)">
-                      </span>
-                      <span class="glyphicon glyphicon-info-sign">
-                        
-                      </span>
-                      <span class="glyphicon glyphicon-remove-circle">
+                      <span class="icon-group">
+                        <span class="glyphicon glyphicon-arrow-up" ng-click="changeStatus({{item.itemId}}, true)">
+                        </span>
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        <span class="glyphicon glyphicon-remove-circle"></span>       
                       </span>
                     </td>
-
                   </tr>
                   </tbody>
-                  <!-- <tr>
-                    <td>Learning D3</td>
-                    <td><a>d3</a>, <a>dataviz</a>, <a>javascript</a></td>
-                    <td></td>
                   </tr>
-                  <tr>
-                    <td>Introducing Elixir</td>
-                    <td><a>elixir</a>, <a>functional_programming</a></td>
-                    <td></td> -->
-                  </tr>
-                </table>                
+                </table> 
+                <!-- end read later body -->
+                </div>               
               <!-- end panel body -->
               </div>
               <!-- end panel -->

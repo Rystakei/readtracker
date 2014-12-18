@@ -22,10 +22,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
  $bodyBgColor: $galleryGray; 
 
  $baseColor: #CF000F; 
+ $accentColor: #F22613;
+ $tertiaryColor: #3A539B;
 
 
 .add-me{
-  margin-left: 12px;
+  margin-left: 8px;
 }
 body{
   background-color: $bodyBgColor; 
@@ -35,20 +37,23 @@ body{
 
 nav.navbar.navbar-default{
   background-color: $baseColor;
-  a{
+  a, a:focus{
   color: white;
   }
+
 }
+
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: white;
+}
+
 .panel > .panel-heading{
   background-color: darken($bodyBgColor, 5%); 
   font-weight: bold; 
   font-size: 16px;
 }
 
-.btn.btn-primary{
-  background-color: $baseColor;
-  border-color: $baseColor;
-}
 
 .highlight-date{
   font-weight: italic;
@@ -81,15 +86,37 @@ a:hover{
 .progress{
   width:50%;
   margin-top: 20px;
-  // display: inline;
+  &:hover .progress-bar{
+    background-color: #96281B;
+    border-color: #96281B;
+  }
 }
 
 .progress-bar{
-  background-color: lighten(#96281B, 30%);
+  // background-color: lighten(#96281B, 15%);
+  background-color: $tertiaryColor;
 }
 
-.add{
-  color: $baseColor;
+.list-group-item:hover .progress-bar{
+  background-color: lighten($tertiaryColor, 10%);
+}
+
+
+.btn.btn-danger{
+  background-color: lighten(#96281B, 15%);
+  border-color: lighten(#96281B, 15%);
+  &:hover{
+    background-color: $accentColor;
+    border-color: $accentColor;
+  }
+}
+
+.icon-group{
+  visibility: hidden;
+}
+
+.list-group-item:hover > .icon-group, tr:hover .icon-group{
+  visibility: visible;
 }
 
 .glyphicon{
