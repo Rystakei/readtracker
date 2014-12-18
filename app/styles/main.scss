@@ -21,7 +21,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
  $containerBgColor: #EAEDF2;
  $bodyBgColor: $galleryGray; 
 
- $baseColor: #EF4836; 
+ // $baseColor: #EF4836; 
+ $baseColor: #D04437;
  $accentColor: #F22613;
  $tertiaryColor: #3A539B;
 
@@ -36,13 +37,21 @@ body{
 }
 
 nav.navbar.navbar-default{
-  background-color: $baseColor;
+  background-color: #D04437;
+  border-bottom: solid 1px darken($bodyBgColor, 20%); 
+  color: white; 
   a, a:focus{
   color: white;
+  // font-weight: bold; 
   }
-
+  .glyphicon{
+    color: white; 
+  }
 }
 
+// .brand-emphasis{
+//   color: $baseColor; 
+// }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: white;
@@ -109,8 +118,8 @@ a:hover{
 .btn.btn-danger{
   // background-color: lighten(#96281B, 15%);
   // border-color: lighten(#96281B, 15%);
-  background-color: #EF4836;
-  border-color: #EF4836;
+  background-color: $baseColor;
+  border-color: $baseColor;
   &:hover{
     background-color: $accentColor;
     border-color: $accentColor;
